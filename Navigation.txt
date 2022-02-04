@@ -1,0 +1,142 @@
+-------------------------------------------------------------------------html--------------------------------------------
+
+<header>
+      <a className='logo'>LOGO</a>
+      <input type="checkbox" id="menu_bar"/>
+      <label htmlFor='menu_bar'>≡</label>
+          <nav className='navbar'>
+              <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pages ▼</a>
+                    <ul>
+                        <li><a href='#'>blogs</a></li>
+                        <li><a href='#'>services ᐅ</a>
+                        <ul>
+                            <li><a href='#'>HTML</a></li>
+                            <li><a href='#'>CSS</a></li>
+                            <li><a href='#'>JS</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Review</a></li>
+                    <li><a href="#">Gallery ▼</a>
+                    <ul>
+                    <li><a href='#'>Photos</a></li>
+                    <li><a href='#'>Videos</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+              </ul>
+          </nav>
+      </header>
+
+//----------------------------------------------------------------------css----------------------------------------------
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: grey;
+  box-shadow: 0px 5px 10px lightgrey;
+  padding: 0px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+.logo{
+
+}
+ul{
+  list-style: none;
+}
+ul li{
+  position: relative;
+  float: left;
+}
+
+a{
+  padding: 20px;
+  display: block;
+  color: aliceblue;
+}
+ul li a:hover{
+  background-color: rgb(44, 41, 41);
+}
+ul li ul{
+  position: absolute;
+  left: 0;
+  width: 150px;
+  background: rgb(170, 170, 170);
+  display: none;
+}
+
+ul li ul li{
+  width: 100%;
+
+}
+ul li ul li ul{
+  left: 150px;
+  top:0;
+}
+ul li ul li ul li{
+  background: rgb(201, 201, 201);
+}
+ul li:hover > ul{
+  display: initial;
+}
+
+header label{
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  display: none;
+  }
+  #menu_bar{
+    display: none;
+  }
+  
+
+  @media(max-width:921px){
+  header{
+    padding: 20px;
+  }
+  header label{
+    display: initial;
+  }
+  .navbar{
+    position: absolute;
+    top:100%;
+    left:0;
+    right: 0;
+    background: lightslategrey;
+    display: none;
+  }
+  header .navbar ul li{ 
+    width:100%;
+  }
+  header .navbar ul li ul{
+    position: relative;
+    width: 100%;
+  }
+  header .navbar ul li ul li{
+    background: rgb(147, 172, 197);
+  }
+  header .navbar ul li ul li ul{
+    width: 100%;
+    left:0;
+  }
+  header .navbar ul li ul li ul li{
+    background: rgb(161, 188, 214);
+  }
+  #menu_bar:checked ~ .navbar{
+    display: initial;
+  }
+}
